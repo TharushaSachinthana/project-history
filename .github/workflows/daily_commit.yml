@@ -1,0 +1,26 @@
+name: Daily Contribution History
+
+on:
+  schedule:
+    # This runs every day at 12:00 PM UTC (random time in your day)
+    - cron: '0 12 * * *'
+  workflow_dispatch: # This allows you to run it manually from the "Actions" tab
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Update Daily Log
+        run: |
+          echo "Automated contribution on $(date)" >> log.txt
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.email "2020e159@eng.jfn.ac.lk"
+          git config --global user.name "Tharusha Sachinthana"
+          git add log.txt
+          git commit -m "Update project logs and documentation (automated) ✅"
+          git push
