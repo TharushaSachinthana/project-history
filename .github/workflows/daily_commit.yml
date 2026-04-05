@@ -22,5 +22,5 @@ jobs:
           git config --global user.email "2020e159@eng.jfn.ac.lk"
           git config --global user.name "Tharusha Sachinthana"
           git add log.txt
-          git commit -m "Update project logs and documentation (automated) ✅"
+          git commit -m "Update project logs and documentation (automated)"
           git push
